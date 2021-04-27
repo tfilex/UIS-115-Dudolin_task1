@@ -12,8 +12,6 @@ int main()
 	cin >> y1;
 	cout << "введите длинну" << endl;
 	cin >> length;
-	cout << "введите измение длинны" << endl;
-	cin >> length_change;
 	cout << "введите изменение координат" << endl;
 	cin >> change_of_coordinate;
 	cout << endl;
@@ -24,13 +22,6 @@ int main()
 	cout << "координаты точки x2, y2:" << " (" << a.get_vortex_x2() << " ; " << a.get_vortex_y2() << ") " << endl;
 	cout << "координаты точки x3, y3:" << " (" << a.get_vortex_x3() << " ; " << a.get_vortex_y3() << ") " << endl;
 	cout << "координаты точки x4, y4:" << " (" << a.get_vortex_x4() << " ; " << a.get_vortex_y4() << ") " << endl << endl << endl;
-
-	cout << "изменённая длинна = " << a.get_length_change(length_change) << endl << endl;
-
-	cout << "координаты точки x1, y1 с изменением длинны: " << " (" << a.get_changed_length_x1(length_change) << " ; " << a.get_changed_length_y1(length_change) << ") " << endl;
-	cout << "координаты точки x2, y2 с изменением длинны: " << " (" << a.get_changed_length_x2(length_change) << " ; " << a.get_changed_length_y2(length_change) << ") " << endl;
-	cout << "координаты точки x3, y3 с изменением длинны: " << " (" << a.get_changed_length_x3(length_change) << " ; " << a.get_changed_length_y3(length_change) << ") " << endl;
-	cout << "координаты точки x4, y4 с изменением длинны: " << " (" << a.get_changed_length_x4(length_change) << " ; " << a.get_changed_length_y4(length_change) << ") " << endl << endl << endl;
 
 	cout << "изменение (перемещение) координат = " << change_of_coordinate << endl << endl;
 

@@ -3,8 +3,7 @@
 
 using namespace std;
 
-
-Square::Square(double x1, double y1, double length)
+void Square::set_length(double x1, double y1, double length)
 {
 	if (length > 0)
 	{
@@ -14,8 +13,13 @@ Square::Square(double x1, double y1, double length)
 	}
 	else
 	{
-		throw invalid_argument{ "длина отрицательная или меньше нуля, дядя, так нельзя" };
+		throw invalid_argument("ƒлина меньше 0 или равна ему");
 	}
+}
+
+Square::Square(double x1, double y1, double length)
+{
+	set_length(x1, y1, length);
 }
 
 double Square::get_vortex_x1() { return x1; }
@@ -27,18 +31,6 @@ double Square::get_vortex_y1() { return y1; }
 double Square::get_vortex_y2() { return y1; }
 double Square::get_vortex_y3() { return y1 - length; }
 double Square::get_vortex_y4() { return y1 - length; }
-
-double Square::get_length_change(double Change_of_length) { return length + Change_of_length; }
-
-double Square::get_changed_length_x1(double Change_of_length) { return x1; }
-double Square::get_changed_length_x2(double Change_of_length){ return x1 + length + Change_of_length; }
-double Square::get_changed_length_x3(double Change_of_length){ return x1 + length + Change_of_length; }
-double Square::get_changed_length_x4(double Change_of_length){ return x1; }
-
-double Square::get_changed_length_y1(double Change_of_length) { return y1; }
-double Square::get_changed_length_y2(double Change_of_length) { return y1; }
-double Square::get_changed_length_y3(double Change_of_length) { return y1 - length - Change_of_length; }
-double Square::get_changed_length_y4(double Change_of_length) { return y1 - length - Change_of_length; }
 
 double Square::get_changed_coordinates_x1(double change_of_coordinate) { return x1 + change_of_coordinate; }
 double Square::get_changed_coordinates_x2(double change_of_coordinate) { return x1 + change_of_coordinate + length; }
