@@ -46,6 +46,10 @@ public:
 	*/
 	Square& operator=(const  Square&) = default;
 
+
+	friend std::ostream& operator<<(std::ostream& out, Square& F);
+
+
 	/**
 	*\brief деструктор по умолчанию
 	*/

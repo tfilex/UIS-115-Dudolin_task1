@@ -22,6 +22,8 @@ Square::Square(double x1, double y1, double length)
 	set_length(x1, y1, length);
 }
 
+
+	
 double Square::get_vortex_x1() { return x1; }
 double Square::get_vortex_x2() { return x1 + length; }
 double Square::get_vortex_x3() { return x1 + length; }
@@ -51,7 +53,14 @@ double Square::get_rotated_x2() { return x1 + length; }
 double Square::get_rotated_x3() { return x1; }
 double Square::get_rotated_x4() { return x1; }
 
-double Square::get_rotated_y1() { return y1; }
+double Square::get_rotated_y1() { return y1 - length; }
 double Square::get_rotated_y2() { return y1 - length; }
 double Square::get_rotated_y3() { return y1; }
 double Square::get_rotated_y4() { return y1; }
+
+std::ostream& operator<<(std::ostream& out, Square& F)
+{
+	return out << F.get_vortex_x1() << " | " << F.get_vortex_x2() << " | " << F.get_vortex_x3() << " | " << F.get_vortex_x4();
+	return out << F.get_vortex_y1() << " | " << F.get_vortex_y2() << " | " << F.get_vortex_y3() << " | " << F.get_vortex_y4();
+
+}
