@@ -102,40 +102,83 @@ int Date::get_year()
     return year;
 }
 
-std::string Date::compare_dates(Date& other)
-{
-        if (year > other.year)
-        {
-            return "the first date is greater than the second";
-        }
-        else if (year == other.year)
-        {
-            if (month > other.month)
-            {
-                return "the first date is greater than the second";
-            }
-            else if (month == other.month)
-            {
-                if (day > other.day)
-                {
-                    return "the first date is greater than the second";
-                }
-                if (day == other.day)
-                {
-                    return "the dates are equal";
-                }
-                if (day < other.day) {
-                    return "the second date is greater than the first";
-                }
-            }
-            else if (month < other.month)
-            {
-                return "the second date is greater than the first";
-            }
-        }
-        else if (year < other.year)
-        {
-            return "the second date is greater than the first";
-        }
 
+
+bool Date::are_equal(Date& other)
+{
+    if (year == other.year)
+    {
+        if (month == other.month)
+        {
+
+            if (day == other.day)
+            {
+                return true;
+            }
+        }
+    }
+    else
+    {
+       return false;
+    }
+}
+
+bool Date::is_greater(Date& other)
+{
+    if (year > other.year)
+    {
+        return true;
+    }
+    else if (year == other.year)
+    {
+        if (month > other.month)
+        {
+            return true;
+        }
+        if (month == other.month)
+        {
+            if (day > other.day)
+            {
+                return true;
+            }
+        }
+    }
+    else
+    {
+        return false;
+    }
+
+
+}
+
+bool Date::is_less(Date& other)
+{
+
+    if (year == other.year)
+    {
+        if (month == other.month)
+        {
+            if (day < other.day) {
+                return true;
+            }
+        }
+        else if (month < other.month)
+        {
+            return true;
+        }
+    }
+    else if (year < other.year)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+std::ostream& operator<<(std::ostream& out, Date& F)
+{
+    return out << F.get_day() << "|" << F.get_month() << "|" << F.get_year();
 }

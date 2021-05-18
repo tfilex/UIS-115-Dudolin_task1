@@ -46,6 +46,8 @@ public:
     */
     Date& operator=(const  Date&) = default;
 
+    friend std::ostream& operator<<(std::ostream& out, Date& F);
+
     /**
     \brief	деструктор по умолчанию
     */
@@ -92,8 +94,12 @@ public:
     int get_year();
 
     /**
-    \brief	метод, сравнивающий даты
+    \brief	методы, сравнивающие даты
     */
-    std::string compare_dates(Date& other);
+    bool are_equal(Date& other);
+
+    bool is_greater(Date& other);
+
+    bool is_less(Date& other);
 
 };

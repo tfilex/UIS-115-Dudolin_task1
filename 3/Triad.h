@@ -39,6 +39,11 @@ public:
 	*/
 	Triad& operator=(const  Triad&) = default;
 
+	friend std::ostream& operator<<(std::ostream& out,Triad& F)
+	{
+		return out << F.get_a() << "|" << F.get_b() << "|" << F.get_c();
+	}
+
 	/**
 	\brief	деструктор по умолчанию
 	*/
