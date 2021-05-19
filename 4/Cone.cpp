@@ -5,7 +5,7 @@ using namespace std;
 Cone::Cone()
 {
 	this->height = 1;
-	this->height = 1;
+	this->radius = 1;
 }
 
 void Cone::set_cone(double height, double radius)
@@ -18,7 +18,7 @@ void Cone::set_cone(double height, double radius)
 	else
 	{
 		this->height = 1;
-		this->height = 1;
+		this->radius = 1;
 	}
 }
 
