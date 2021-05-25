@@ -9,21 +9,16 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 
-	double r = 100;
-	double h = 100;
+	Cone a(15, 10);
+	Sphere b(1);
+	Pyramid c(10, 10, 10);
 
-	Cone a(r, h);
-	Sphere b(r);
-	Pyramid c(1, 2, 3, h);
+	cout << "объём конуса равен: " << a.get_volume() << endl;
+	cout << "площадь поверхности конуса равна:" << a.get_volume() << endl;
 
-	cout << "объём конуса равен: " << a.get_volume(h, r) << endl;
-	cout << "площадь поверхности конуса равна:" << a.get_volume(h, r) << endl;
+	cout << "объём шара равен: " << b.get_volume() << endl;
+	cout << "площадь поверхности шара равна:" << b.get_surface_area() << endl;
 
-	cout << "объём шара равен: " << b.get_volume(r) << endl;
-	cout << "площадь поверхности шара равна:" << b.get_surface_area(r) << endl;
-
-	cout << "объём пирамиды равен: " << c.get_volume(1, 2, 3, h) << endl;
-	cout << "площадь поверхности пипрамиды равна:" << c.get_surface_area(1, 2, 3, h) << endl;
-
-
+	cout << "объём пирамиды равен: " << c.get_volume() << endl;
+	cout << "площадь поверхности пипрамиды равна:" << c.get_surface_area() << endl;
 }

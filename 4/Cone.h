@@ -1,59 +1,52 @@
 #pragma once
 #include <cmath>
+#include "Geometric_figure.h"
 
-class Cone
+class Cone : public Geometric_figure
 {
-protected:
-        /**
-	*\brief константа π
-	*/
-	const double M_PI = 3.14159265359;
+private:
 
-        /**
-	*\brief высота
-	*/
+
+	/**
+*\brief высота
+*/
 	double height;
 
-        /**
-	*\brief радиус
-	*/
+	/**
+*\brief радиус
+*/
 	double radius;
 
-        /**
-	*\brief сеттер для проверки параметров
-	*/
-	void set_cone(double height, double radius);
+	/**
+*\brief сеттер для проверки параметров
+*/
 public:
-        /**
-	*\brief конструктор по умолчанию
-	*/
-	Cone();
-        /**
-	*\brief конструктор с параметрами
-	* \param высота
-	* \param радиус
-	*/
+	/**
+*\brief конструктор с параметрами
+* \param высота
+* \param радиус
+*/
 	Cone(double height, double radius);
 
 
-        /**
-	*\brief деструктор по умолчанию
-	*/
-	~Cone() = default;
+	/**
+*\brief деструктор по умолчанию
+*/
+	~Cone() override = default;
 
 
-        /**
-	*\brief метод, вычисляющий объём конуса
-	* \param высота
-	* \param радиус
-	*/
-	double get_volume(double height, double radius);
+	/**
+*\brief метод, вычисляющий объём конуса
+* \param высота
+* \param радиус
+*/
+	double get_volume() override;
 
-        /**
-	*\brief метод, вычисляющий площадь поверхности
-	* \param высота
-	* \param радиус
-	*/
-	double get_surface_area(double height, double radius);
+	/**
+*\brief метод, вычисляющий площадь поверхности
+* \param высота
+* \param радиус
+*/
+	double get_surface_area() override;
 
 };
